@@ -1,1 +1,48 @@
-<p>side-bar works!</p>
+<div class="side-bar-container">
+  <header class="header">Pro side bar</header>
+
+  <div class="user-info-search">
+    <div class="user-info">
+      <div class="user-icon"></div>
+      <div class="user-info-details">
+        <div>Jhon Smith</div>
+        <div>Administartor</div>
+        <div><span class="online-badge"></span>Online</div>
+      </div>
+    </div>
+  </div>
+  <div class="search-box">
+    <span class="p-input-icon-right">
+      <i class="pi pi-search"></i>
+      <input type="text" pInputText placeholder="Search..." />
+    </span>
+  </div>
+  <div class="menus">
+    <div>General</div>
+
+    <div>
+      <p-scrollPanel [style]="{ width: '100%', height: '300px' }">
+        <ul *ngFor="let menu of mainMenus" class="menu-list">
+          <li>
+            <i class="pi pi-envelope icon"></i>
+            <span class="menu-item">{{ menu.name }}</span>
+          </li>
+        </ul>
+      </p-scrollPanel>
+    </div>
+  </div>
+  <footer class="footer">
+    <span class="bell">
+      <i class="pi pi-bell"></i>
+      <sup><span class="bell-notification">5</span></sup>
+    </span>
+
+    <span class="bell">
+      <i class="pi pi-envelope"></i>
+      <sup><span class="email-notification">5</span></sup>
+    </span>
+
+    <i class="pi pi-cog"></i>
+    <i class="pi pi-power-off"></i>
+  </footer>
+</div>

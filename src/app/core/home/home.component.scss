@@ -1,0 +1,19 @@
+.home-page-container {
+  height: 100%;
+  flex-direction: column;
+
+  .side-bar-container {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    
+    .side-bar {
+      border: 1px solid grey;
+      width: 20%;
+      background-image: url("./../../../assets/images/bg.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+}

@@ -1,3 +1,5 @@
+@import "../../../styles/variables"; // this is not cool!
+
 .side-bar-container {
   display: flex;
   flex-direction: column;
@@ -11,7 +13,7 @@
   border-top: 1px solid grey;
   border-bottom: 1px solid grey;
   flex: 1 1 50%;
-  padding: 15px;
+  padding: 15px 0px;
 }
 .search-box {
   margin: 10px 15px;
@@ -24,6 +26,13 @@
   flex-direction: column;
   .user-info-details {
     margin-left: 15px;
+    font-size: 14px;
+
+    .user-name {
+      color: $white-color;
+      font-size: 15px;
+      font-weight: 600;
+    }
   }
 
   .user-info {
@@ -48,11 +57,13 @@
   color: white;
   background-color: black;
   border-bottom: 1px soild grey;
+  font-size: 17px;
+  font-weight: 500;
 }
 .footer {
   display: flex;
   justify-content: space-between;
-  padding: 5px 15px;
+  padding: 10px 15px;
   background-color: #0a1420;
 }
 
@@ -69,7 +80,8 @@
   font-size: 15px;
   padding: 5px;
   list-style: none;
-  opacity: 0.8;
+  margin: 0px;
+  padding: 0px;
 
   &:hover {
     opacity: 1;
@@ -97,12 +109,41 @@
   @extend .bell-notification;
   background: greenyellow;
 }
-.menu-item {
-  margin: 15px;
-}
 .icon {
   background: #9c9898;
   padding: 5px;
   border-radius: 5px;
   color: white;
+}
+.sub-menu-container {
+  padding: 0px 30px;
+  background: #675c5c;
+  opacity: 1;
+  // margin-top: 10px;
+  li {
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
+.sub-menu {
+  display: flex;
+  align-items: center;
+  padding: 0px 10px;
+
+  .menu-item {
+    margin: 15px;
+    flex: 1;
+  }
+}
+
+.active-link {
+  background-color: orange;
+  color: white;
+  opacity: 1 !important;
+}
+
+.active-link-submenu {
+  color: orange;
+  opacity: 1 !important;
 }

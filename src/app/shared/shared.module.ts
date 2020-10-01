@@ -5,6 +5,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { SidebarModule } from 'primeng/sidebar';
 import { AccordionModule } from 'primeng/accordion';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [],
@@ -17,6 +18,7 @@ import { AccordionModule } from 'primeng/accordion';
     ButtonModule,
     InputTextModule,
     AccordionModule,
+    RouterModule,
   ],
   exports: [
     ScrollPanelModule,
@@ -26,6 +28,7 @@ import { AccordionModule } from 'primeng/accordion';
     ButtonModule,
     InputTextModule,
     AccordionModule,
+    RouterModule,
   ],
 })
 export class SharedModule {}

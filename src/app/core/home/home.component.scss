@@ -8,7 +8,6 @@
     flex: 1;
     
     .side-bar {
-      border: 1px solid grey;
       width: 20%;
       background-image: url("./../../../assets/images/bg.jpg");
       background-position: center;
@@ -16,4 +15,11 @@
       background-size: cover;
     }
   }
+  .main-content {
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+
 }

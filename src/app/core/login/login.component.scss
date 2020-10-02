@@ -2,3 +2,62 @@
 h1 {
   color: $brand-color;
 }
+
+.login-container {
+  height: 100%;
+  width: 100%;
+
+  .login-form {
+    text-align: center;
+    background-color: white;
+    height: 89%;
+    padding: 15px;
+    margin: auto;
+    position: absolute;
+    left: 2%;
+    z-index: 1;
+    top: 5%;
+    box-shadow: 0 0 7px;
+
+    .logo {
+      .logo-icon {
+        font-size: 5rem;
+        color: gray;
+        margin: 10px 0px;
+      }
+    }
+  }
+}
+
+.image {
+  background-image: url("./../../../assets/images/air-balloon.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.8;
+}
+
+.orange {
+  background: #d85a20;
+}
+
+.login-subtitle {
+  color: gray;
+}
+
+.login-button {
+  background: #d85a20;
+  width: 100%;
+}
+
+.login-button:hover {
+  background: #d85a20;
+}
+
+.p-button-link {
+  color: #d85a20;
+}
+
+.signup-link {
+  color: #d85a20;
+}

@@ -6,6 +6,7 @@ import { ButtonModule } from 'primeng/button';
 import { SidebarModule } from 'primeng/sidebar';
 import { AccordionModule } from 'primeng/accordion';
 import { RouterModule } from '@angular/router';
+import { AuthService } from './service/auth.service';
 
 @NgModule({
   declarations: [],
@@ -20,6 +21,7 @@ import { RouterModule } from '@angular/router';
     AccordionModule,
     RouterModule,
   ],
+  providers:[AuthService],
   exports: [
     ScrollPanelModule,
     InputTextModule,

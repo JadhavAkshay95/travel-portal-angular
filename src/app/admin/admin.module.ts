@@ -8,7 +8,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   { path: 'role-creation', component: RoleCreationComponent },
-  { path: 'screen-maintenance', component: ScreenMaintainceComponent },
+  { path: 'screen-master', component: ScreenMaintainceComponent },
   { path: 'user-creation', component: UserCreationComponent },
   { path: 'assign-screen', component: AssignScreenComponent },
 ];

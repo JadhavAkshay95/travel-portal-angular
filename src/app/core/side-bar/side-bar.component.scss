@@ -4,8 +4,8 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  color: #dcdcdc;
-  background: black;
+  color: $light-grey-color;
+  background: $black-color;
   opacity: 0.7;
 }
 
@@ -20,7 +20,7 @@
 }
 .user-info-search {
   padding: 20px;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid $grey-color;
 
   display: flex;
   flex-direction: column;
@@ -54,9 +54,9 @@
 
 .header {
   padding: 5px 20px;
-  color: white;
-  background-color: black;
-  border-bottom: 1px soild grey;
+  color: $white-color;
+  background-color: $black-color;
+  border-bottom: 1px soild $grey-color;
   font-size: 17px;
   font-weight: 500;
 }
@@ -64,14 +64,14 @@
   display: flex;
   justify-content: space-between;
   padding: 10px 15px;
-  background-color: #0a1420;
+  background-color: $black-color;
 }
 
 .online-badge {
   display: inline-block;
   height: 10px;
   width: 10px;
-  background: #47e447;
+  background: $green-shade;
   border-radius: 50%;
   margin-right: 5px;
 }
@@ -95,31 +95,30 @@
   display: inline-block;
   height: 15px;
   width: 20px;
-  background: #fbc02d;
+  background: $yellow-shade;
   border-radius: 50%;
   margin-right: 5px;
   position: absolute;
   top: -4px;
   opacity: 1;
-  color: black;
+  color: $black-color;
   font-weight: 500;
 }
 
 .email-notification {
   @extend .bell-notification;
-  background: greenyellow;
+  background: $green-yellow-shade;
 }
 .icon {
-  background: #9c9898;
+  background: $dark-grey-color;
   padding: 5px;
   border-radius: 5px;
-  color: white;
+  color: $white-color;
 }
 .sub-menu-container {
   padding: 0px 30px;
-  background: #675c5c;
+  background: $brown-color;
   opacity: 1;
-  // margin-top: 10px;
   li {
     padding: 10px;
     font-size: 14px;
@@ -138,12 +137,12 @@
 }
 
 .active-link {
-  background-color: orange;
-  color: white;
+  background-color: $orange;
+  color: $white-color;
   opacity: 1 !important;
 }
 
 .active-link-submenu {
-  color: orange;
+  color: $orange;
   opacity: 1 !important;
 }

@@ -19,7 +19,7 @@ h1 {
   }
   .login-form {
     text-align: center;
-    background-color: white;
+    background-color: $white-color;
     height: 89%;
     padding: 20px;
     margin: auto;
@@ -56,21 +56,21 @@ h1 {
 }
 
 .orange {
-  background: #d85a20;
+  background: $orange;
 }
 
 .login-subtitle {
-  color: gray;
+  color: $grey-color;
 }
 
 .login-button {
-  background: #d85a20;
+  background: $orange;
   width: 100%;
   margin: 10px;
 }
 
 .login-button:hover {
-  background: #d85a20;
+  background: $orange;
 }
 
 .forgot-password {
@@ -80,7 +80,7 @@ h1 {
   cursor: pointer;
   &:hover {
     text-decoration: underline;
-    color: #d85a20;
+    color: $orange;
   }
 }
 
@@ -88,7 +88,7 @@ h1 {
   cursor: pointer;
   margin: 20px 0px;
   a {
-    color: #d85a20;
+    color: $orange;
 
     &:hover {
       text-decoration: underline;
@@ -112,13 +112,13 @@ h1 {
 
 .error-message {
   margin: 5px;
-  color: red;
+  color: $red;
   padding-right: 25%;
 }
 
 .invalid {
   margin: 10px;
-  color: red;
+  color: $red;
   padding-right: 5%;
 }
 @media screen and (max-width: 450px) {

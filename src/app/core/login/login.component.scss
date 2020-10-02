@@ -6,24 +6,42 @@ h1 {
 .login-container {
   height: 100%;
   width: 100%;
+  position: absolute;
+  .keep-me-sigh-in {
+    justify-content: center;
+    width: 75%;
+    margin: 10px;
+  }
 
+  h4,
+  h3 {
+    margin: 10px;
+  }
   .login-form {
     text-align: center;
     background-color: white;
     height: 89%;
-    padding: 15px;
+    padding: 20px;
     margin: auto;
-    position: absolute;
-    left: 2%;
+    left: 5%;
     z-index: 1;
+    position: absolute;
     top: 5%;
     box-shadow: 0 0 7px;
+    width: 25%;
 
     .logo {
+      display: flex;
+      justify-content: center;
       .logo-icon {
-        font-size: 5rem;
-        color: gray;
-        margin: 10px 0px;
+        border-radius: 50px;
+
+        height: 100px;
+        width: 100px;
+        background-image: url("./../../../assets/images/drone.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
       }
     }
   }
@@ -48,16 +66,63 @@ h1 {
 .login-button {
   background: #d85a20;
   width: 100%;
+  margin: 10px;
 }
 
 .login-button:hover {
   background: #d85a20;
 }
 
-.p-button-link {
-  color: #d85a20;
+.forgot-password {
+  margin: 15px;
+
+  color: $grey-color;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+    color: #d85a20;
+  }
 }
 
 .signup-link {
-  color: #d85a20;
+  cursor: pointer;
+  margin: 20px 0px;
+  a {
+    color: #d85a20;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.form-controls {
+  margin: 0px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  label {
+    position: relative;
+    width: 100px;
+    right: 25%;
+    margin: 5px;
+  }
+}
+
+.error-message {
+  margin: 5px;
+  color: red;
+  padding-right: 25%;
+}
+
+.invalid {
+  margin: 10px;
+  color: red;
+  padding-right: 5%;
+}
+@media screen and (max-width: 450px) {
+  .login-form {
+    width: 90% !important;
+  }
 }

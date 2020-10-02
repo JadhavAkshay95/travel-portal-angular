@@ -1,49 +1,97 @@
 <div>
-    <div class="p-grid login-container">
-        <div class="p-col-3 orange">
-            <div class="login-form">
-                <div class="logo">
-                    <i class="pi pi-globe logo-icon"></i>
-                </div>
-                <h3>
-                    Your Smart Mapping Platform
-                </h3>
-                <div>
-                    <h4 class="login-subtitle">Please Login to Your Account</h4>
-                    <div class="p-field p-grid">
-                        <label for="userName" class="p-col-fixed" style="width:100px">Username</label>
-                        <div class="p-input-icon-left">
-                            <i class="pi pi-user"></i>
-                            <input id="userName" type="text" pInputText>
-                        </div>
-                    </div>
-                    <div class="p-field p-grid">
-                        <label for="password" class="p-col-fixed" style="width:100px">Password</label>
-                        <div class="p-input-icon-left">
-                            <i class="pi pi-lock"></i>
-                            <input id="password" type="text" pInputText>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="p-field-checkbox">
-                    <p-checkbox name="checked" label="Keep me signed in"></p-checkbox>
-                </div>
-
-                <button pButton type="button" label="Login" class="login-button"></button>
-
-                <p-button styleClass="p-button-link" label="Forgot Password"></p-button>
-
-                <div>
-
-                    <span>Don't have an account</span>
-                    <p-button class="signup-link" styleClass="p-button-link" label="Signup here"></p-button>
-                </div>
+  <div class="p-grid login-container">
+    <div class="p-col-3 orange">
+      <div class="login-form">
+        <div class="logo">
+          <div class="logo-icon"></div>
+        </div>
+        <h3>Your Smart Mapping Platform</h3>
+        <div>
+          <h4 class="login-subtitle">Please Login to Your Account</h4>
+          <form #formLogin="ngForm" (ngSubmit)="login()">
+            <div class="p-field form-controls">
+              <label
+                for="userName"
+                class="p-col-fixed p-grid"
+                style="width: 100px"
+                >Username</label
+              >
+              <div class="p-input-icon-left p-grid">
+                <i class="pi pi-user"></i>
+                <input
+                  id="userName"
+                  type="text"
+                  pInputText
+                  [(ngModel)]="loginForm.user_login_id"
+                  name="user_login_id"
+                  #user_login_id="ngModel"
+                  required
+                  (change)="isInvalidUser = false"
+                />
+              </div>
+              <div
+                class="error-message"
+                *ngIf="!user_login_id.valid && user_login_id.touched"
+              >
+                User name is required!
+              </div>
             </div>
+            <div class="p-field form-controls">
+              <label
+                for="password"
+                class="p-col-fixed p-grid"
+                style="width: 100px"
+                >Password</label
+              >
+              <div class="p-input-icon-left p-grid">
+                <i class="pi pi-lock"></i>
+                <input
+                  id="password"
+                  type="password"
+                  pInputText
+                  [(ngModel)]="loginForm.user_login_password"
+                  name="user_login_password"
+                  #user_login_password="ngModel"
+                  required
+                  (change)="isInvalidUser = false"
+                />
+              </div>
+              <div
+                class="error-message"
+                *ngIf="
+                  !user_login_password.valid && user_login_password.touched
+                "
+              >
+                Password is required!
+              </div>
+            </div>
+          </form>
         </div>
 
-        <div class="p-col-9 image">
-
+        <div class="error-message invalid" *ngIf="isInvalidUser">
+          Invalid username or password !
         </div>
+        <div class="p-field-checkbox keep-me-sigh-in">
+          <p-checkbox name="checked" label="Keep me signed in"></p-checkbox>
+        </div>
+
+        <button
+          pButton
+          type="submit"
+          label="Login"
+          class="login-button"
+          (click)="login()"
+        ></button>
+
+        <div class="forgot-password">
+          <a> Forgot Password </a>
+        </div>
+        <div class="signup-link">
+          <span>Don't have an account ? <a>Signup here</a></span>
+        </div>
+      </div>
     </div>
+
+    <div class="p-col-9 image"></div>
+  </div>
 </div>

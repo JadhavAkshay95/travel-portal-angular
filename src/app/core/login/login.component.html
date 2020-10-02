@@ -1,4 +1,49 @@
-<p>login works!</p>
-<h1>Hello World!</h1>
+<div>
+    <div class="p-grid login-container">
+        <div class="p-col-3 orange">
+            <div class="login-form">
+                <div class="logo">
+                    <i class="pi pi-globe logo-icon"></i>
+                </div>
+                <h3>
+                    Your Smart Mapping Platform
+                </h3>
+                <div>
+                    <h4 class="login-subtitle">Please Login to Your Account</h4>
+                    <div class="p-field p-grid">
+                        <label for="userName" class="p-col-fixed" style="width:100px">Username</label>
+                        <div class="p-input-icon-left">
+                            <i class="pi pi-user"></i>
+                            <input id="userName" type="text" pInputText>
+                        </div>
+                    </div>
+                    <div class="p-field p-grid">
+                        <label for="password" class="p-col-fixed" style="width:100px">Password</label>
+                        <div class="p-input-icon-left">
+                            <i class="pi pi-lock"></i>
+                            <input id="password" type="text" pInputText>
+                        </div>
+                    </div>
+                </div>
 
-<button (click)="login()">Login</button>
+                <div class="p-field-checkbox">
+                    <p-checkbox name="checked" label="Keep me signed in"></p-checkbox>
+                </div>
+
+                <button pButton type="button" label="Login" class="login-button"></button>
+
+                <p-button styleClass="p-button-link" label="Forgot Password"></p-button>
+
+                <div>
+
+                    <span>Don't have an account</span>
+                    <p-button class="signup-link" styleClass="p-button-link" label="Signup here"></p-button>
+                </div>
+            </div>
+        </div>
+
+        <div class="p-col-9 image">
+
+        </div>
+    </div>
+</div>

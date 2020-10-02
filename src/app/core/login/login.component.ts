@@ -9,10 +9,11 @@ import { AuthService } from 'src/app/shared/service/auth.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
+  keepSigned: boolean;
   constructor(private authService: AuthService, private router: Router) {}
 
-  ngOnInit(): void {}
-
+  ngOnInit() {}
+  
   login() {
     this.authService.login();
     this.router.navigateByUrl('/home');

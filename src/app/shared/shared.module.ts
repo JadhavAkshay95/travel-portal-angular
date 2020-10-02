@@ -6,7 +6,9 @@ import { ButtonModule } from 'primeng/button';
 import { SidebarModule } from 'primeng/sidebar';
 import { AccordionModule } from 'primeng/accordion';
 import { RouterModule } from '@angular/router';
+import {CheckboxModule} from 'primeng/checkbox';
 import { AuthService } from './service/auth.service';
+
 
 @NgModule({
   declarations: [],
@@ -20,6 +22,7 @@ import { AuthService } from './service/auth.service';
     InputTextModule,
     AccordionModule,
     RouterModule,
+    CheckboxModule
   ],
   providers:[AuthService],
   exports: [
@@ -31,6 +34,7 @@ import { AuthService } from './service/auth.service';
     InputTextModule,
     AccordionModule,
     RouterModule,
+    CheckboxModule
   ],
 })
 export class SharedModule {}

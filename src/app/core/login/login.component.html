@@ -5,7 +5,7 @@
         <div class="logo">
           <div class="logo-icon"></div>
         </div>
-        <h3>Your Smart Mapping Platform</h3>
+        <h3>Travel Portal</h3>
         <div>
           <h4 class="login-subtitle">Please Login to Your Account</h4>
           <form #formLogin="ngForm" (ngSubmit)="login()">
@@ -72,7 +72,15 @@
           Invalid username or password !
         </div>
         <div class="p-field-checkbox keep-me-sigh-in">
-          <p-checkbox name="checked" label="Keep me signed in"></p-checkbox>
+          <input
+            type="checkbox"
+            name="checked"
+            label=""
+            value="keepSigned"
+            [checked]="keepSigned"
+            (change)="rememeberMe($event)"
+          />
+          <span>Keep me signed in</span>
         </div>
 
         <button

@@ -1,3 +1,5 @@
+@import "../../../styles/variables";
+
 .home-page-container {
   height: 100%;
   flex-direction: column;
@@ -7,6 +9,7 @@
     flex-direction: row;
     flex: 1;
     .side-bar {
+      background: $light-blue-color;
       width: 20%;
       background-image: url("./../../../assets/images/bg.jpg");
       background-position: center;

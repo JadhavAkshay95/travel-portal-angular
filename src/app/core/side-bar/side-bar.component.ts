@@ -13,10 +13,12 @@ export class SideBarComponent implements OnInit {
   selectedSubMenuIndex;
   mainMenus = [];
   menus = [];
+  checkForDevice: boolean;
   constructor(private router: Router, private sidebarService: SidebarService) {}
 
   ngOnInit(): void {
     this.mainMenus = this.sidebarService.getMainmenu();
+    this.getScreenWidth();
     this.menus = this.sidebarService.getSubMenu().map((item) => {
       item['subMenu'] = item.name
         .replace(/([A-Z][a-z])/g, ' $1')
@@ -64,5 +66,10 @@ export class SideBarComponent implements OnInit {
         this.router.navigate(['home', 'transaction', 'sample-tran']);
         break;
     }
+  }
+
+  getScreenWidth() {
+    this.checkForDevice = screen.width > 600 ? true : false;
+    console.log(this.checkForDevice);
   }
 }

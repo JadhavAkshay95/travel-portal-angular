@@ -1,12 +1,13 @@
 <div class="home-page-container p-d-flex">
   <header></header>
   <div class="side-bar-container">
-    <div class="side-bar">
+    <div class="side-bar left-sidebar" id="sidebar">
       <app-side-bar></app-side-bar>
     </div>
     <div class="main-content">
-      <router-outlet></router-outlet>
+      <router-outlet><button (click)="toggleBtnclick()" type="button" id="toggleBtn">Toggle</button></router-outlet>
     </div>
+    <div (click)="overlayClick()" class="overlay hidden" id="overlay"></div>
   </div>
   <footer></footer>
 </div>

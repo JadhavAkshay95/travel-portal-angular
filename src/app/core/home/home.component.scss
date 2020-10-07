@@ -30,3 +30,39 @@
     height: 100% !important;
   }
 }
+
+#sidebar {
+  min-width: 250px;
+  max-width: 250px;
+  background-color: lightgray;
+  transition: all 0.3s;
+  height: 100vh;
+  margin-left: -250px;
+  /* top layer */
+  z-index: 3
+}
+
+#sidebar.active {
+  margin-left: 0px;
+}
+
+@media (max-width: 580px) {
+  #sidebar {
+    position: fixed;
+    top: 0;
+    /* top layer */
+    z-index: 3
+  }
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.425);
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    position: absolute;
+  }
+  .overlay.hidden {
+    display: none;
+  }
+}

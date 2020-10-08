@@ -4,8 +4,9 @@
     <div class="side-bar left-sidebar" id="sidebar">
       <app-side-bar></app-side-bar>
     </div>
-    <div class="main-content">
-      <router-outlet><button (click)="toggleBtnclick()" type="button" id="toggleBtn">Toggle</button></router-outlet>
+    <div class="main-content" [ngClass]="toogle ? 'main-content-1' : 'main-content'">
+      <div><button (click)="toggleBtnclick()" type="button" id="toggleBtn">Toggle</button></div>
+      <router-outlet></router-outlet>
     </div>
     <div (click)="overlayClick()" class="overlay hidden" id="overlay"></div>
   </div>

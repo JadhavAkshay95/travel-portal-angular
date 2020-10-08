@@ -8,6 +8,8 @@
     display: flex;
     flex-direction: row;
     flex: 1;
+    position: relative;
+
     .side-bar {
       background: $light-blue-color;
       width: 20%;
@@ -15,15 +17,30 @@
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
+      position: fixed;
+
     }
   }
+
   .main-content {
     flex: 1;
-    justify-content: center;
     display: flex;
     margin: 15px;
+    flex-direction: column;
+    position: absolute;
+    left: 18%;
+  }
+
+  .main-content-1 {
+    flex: 1;
+    display: flex;
+    margin: 15px;
+    flex-direction: column;
+    position: absolute;
+    left: 0%;
   }
 }
+
 @media screen and (max-width: 450px) {
   .side-bar {
     width: 70% !important;
@@ -53,6 +70,7 @@
     /* top layer */
     z-index: 3
   }
+
   .overlay {
     background-color: rgba(0, 0, 0, 0.425);
     width: 100vw;
@@ -62,6 +80,7 @@
     left: 0;
     position: absolute;
   }
+
   .overlay.hidden {
     display: none;
   }

@@ -4,9 +4,8 @@
     <div class="card">
         <p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle"></p-confirmDialog>
         <p-table #dt [value]="users" [rows]="10" [paginator]="true"
-            [globalFilterFields]="['Name','Code','Module','Status']" [(selection)]="selectedUsers"
-            [rowHover]="true" dataKey="id"
-            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+            [globalFilterFields]="['Name','Code','Module','Status']" [(selection)]="selectedUsers" [rowHover]="true"
+            dataKey="id" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
             [showCurrentPageReport]="true">
             <ng-template pTemplate="caption">
                 <div class="p-d-flex p-ai-center p-jc-between">
@@ -20,9 +19,7 @@
             </ng-template>
             <ng-template pTemplate="header">
                 <tr>
-                    <th style="width: 3rem">
-                        <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
-                    </th>
+
                     <th>Name <p-sortIcon field="Name"></p-sortIcon>
                     </th>
                     <th>Code <p-sortIcon field="Code"></p-sortIcon>
@@ -31,27 +28,22 @@
                     </th>
                     <th>Path <p-sortIcon field="Path"></p-sortIcon>
                     </th>
-                    <th>Visible <p-sortIcon field="Status"></p-sortIcon>
+                    <th style="width: 3rem">Visible
                     </th>
                     <th></th>
                 </tr>
             </ng-template>
             <ng-template pTemplate="body" let-user>
                 <tr>
-                    <td>
-                        <p-tableCheckbox [value]="user"></p-tableCheckbox>
-                    </td>
                     <td>{{user.Name}}</td>
                     <td>{{user.Code}}</td>
                     <td>{{ getModuleName(user.Module) }}</td>
                     <td>{{user.Path}}</td>
-                    <td>{{getStatusName(user.Status)}}</td>
                     <td>
-                        <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2"
-                            (click)="editUser(user)"></button>
-                        <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning"
-                            (click)="deleteUser(user)"></button>
+                        <p-tableCheckbox [value]="user"></p-tableCheckbox>
+
                     </td>
+                    <td></td>
                 </tr>
             </ng-template>
             <ng-template pTemplate="summary">

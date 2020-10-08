@@ -161,9 +161,11 @@
 .active-link-submenu {
   color: $orange;
   opacity: 1 !important;
+  color: #fb5204;
+  opacity: 1 !important;
 
   a {
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 700;
     opacity: 1;
   }

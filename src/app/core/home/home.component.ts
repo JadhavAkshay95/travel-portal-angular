@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  constructor() {}
+  toogle: boolean;
 
+  constructor() {}
   ngOnInit(): void {
-    this.overlayClick()
+    this.overlayClick();
   }
 
   openNav() {
@@ -21,6 +22,7 @@ export class HomeComponent implements OnInit {
   }
 
   toggleBtnclick = function () {
+    this.toogle = !this.toogle;
     document.getElementById('sidebar').classList.toggle('active');
     document.getElementById('overlay').classList.toggle('hidden');
   };

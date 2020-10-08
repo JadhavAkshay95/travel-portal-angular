@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataService } from 'src/app/data.service';
+import { AuthService } from 'src/app/shared/service/auth.service';
 import { SidebarService } from 'src/app/shared/service/sidebar.service';
 
 @Component({
@@ -14,11 +16,15 @@ export class SideBarComponent implements OnInit {
   mainMenus = [];
   menus = [];
   checkForDevice: boolean;
-  constructor(private router: Router, private sidebarService: SidebarService) {}
+  constructor(
+    private router: Router,
+    private authService: AuthService,
+    private sidebarService: SidebarService,
+    private dataService: DataService
+  ) {}
 
   ngOnInit(): void {
     this.mainMenus = this.sidebarService.getMainmenu();
-    this.getScreenWidth();
     this.menus = this.sidebarService.getSubMenu().map((item) => {
       item['subMenu'] = item.name
         .replace(/([A-Z][a-z])/g, ' $1')
@@ -33,43 +39,15 @@ export class SideBarComponent implements OnInit {
       this.isShowSubMenu = true;
     }
     this.selectedMenuIndex = index;
+    this.router.navigate(['home', 'admin', 'index']);
   }
 
   navigateSubMenu(menu, index) {
     this.selectedSubMenuIndex = index;
-    switch (menu.name) {
-      case 'RoleMater':
-        this.router.navigate(['home', 'admin', 'role-creation']);
-        break;
-
-      case 'ScreenMaster':
-        this.router.navigate(['home', 'admin', 'screen-master']);
-        break;
-
-      case 'UserMaster':
-        this.router.navigate(['home', 'admin', 'user-creation']);
-        break;
-
-      case 'AssignScreen':
-        this.router.navigate(['home', 'admin', 'assign-screen']);
-        break;
-
-      case 'Company':
-        this.router.navigate(['home', 'master', 'company']);
-        break;
-
-      case 'Branch':
-        this.router.navigate(['home', 'master', 'branch']);
-        break;
-
-      case 'Sample Trans':
-        this.router.navigate(['home', 'transaction', 'sample-tran']);
-        break;
-    }
+    this.dataService.addTabs(menu.name);
   }
 
-  getScreenWidth() {
-    this.checkForDevice = screen.width > 600 ? true : false;
-    console.log(this.checkForDevice);
+  add() {
+    this.authService.addMasterTabs('');
   }
 }

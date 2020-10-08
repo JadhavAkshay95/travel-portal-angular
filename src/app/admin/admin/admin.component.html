@@ -1,0 +1,34 @@
+<div class="card">
+    <p *ngIf="!masterTabs.length">
+        add tab
+    </p>
+    <p-tabView id="closableTabView" [controlClose]="false" (onChange)="changeTab($event)" (onClose)="closeTab($event)">
+        <ng-container *ngFor="let tab of masterTabs">
+            <p-tabPanel [header]="tab.tab" *ngIf="tab.tab==='ScreenMaster'" [selected]="tab.selected" [closable]="true"
+                (click)="closeTab(tab)">
+                <p>
+                    <app-screen-master></app-screen-master>
+                </p>
+            </p-tabPanel>
+
+            <p-tabPanel [header]="tab.tab" *ngIf="tab.tab === 'UserMaster'" [selected]="tab.selected" [closable]="true">
+                <p>
+                    <app-user-master></app-user-master>
+                </p>
+            </p-tabPanel>
+
+            <p-tabPanel [header]="tab.tab" *ngIf="tab.tab === 'AssignScreen'" [selected]="tab.selected"
+                [closable]="true">
+                <p>
+                    <app-assign-screen></app-assign-screen>
+                </p>
+            </p-tabPanel>
+
+            <p-tabPanel [header]="tab.tab" *ngIf="tab.tab === 'RoleMater'" [selected]="tab.selected" [closable]="true">
+                <p>
+                    <app-role-master></app-role-master>
+                </p>
+            </p-tabPanel>
+        </ng-container>
+    </p-tabView>
+</div>

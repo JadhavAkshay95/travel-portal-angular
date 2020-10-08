@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable, of, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -13,6 +14,19 @@ export class AuthService {
     { user_login_id: 'PDA', user_login_password: 'PDA#123', '': '' },
   ];
 
+  masterTabs = [];
+  private subject = new Subject();
+
+  sendMessage(message: string) {
+    this.masterTabs.push(message);
+
+    this.subject.next({ message });
+  }
+
+  getMessage(): Observable<any> {
+    return this.subject.asObservable();
+  }
+
   gettoken() {
     return !!localStorage.getItem('loginUser');
   }
@@ -25,5 +39,13 @@ export class AuthService {
     ).length > 0
       ? true
       : false;
+  }
+
+  addMasterTabs(element) {
+    this.masterTabs.push(element);
+  }
+
+  getMasterTabs() {
+    return of(this.masterTabs);
   }
 }

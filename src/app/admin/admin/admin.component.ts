@@ -31,7 +31,7 @@ export class AdminComponent implements OnInit, OnDestroy {
   }
 
   closeTab(e) {
-    if (e.originalEvent === 'MouseEvent') {
+    if (e.originalEvent) {
       let index = e.index;
       this.dataService.removeTabs(index);
     }
